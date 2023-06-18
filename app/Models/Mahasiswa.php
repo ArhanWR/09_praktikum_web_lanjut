@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Mahasiswa;
+use App\Models\Kelas;
 use App\Models\MataKuliah;
+use App\Models\Mahasiswa_MataKuliah;
 
 class Mahasiswa extends Model
 {
@@ -18,10 +20,11 @@ class Mahasiswa extends Model
         'kelas_id',
         'jurusan',
     ];
-
+    
     // relasi dengan kelas
-    public function kelas(){
-        return $this->belongsTo(Kelas::class);
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'kelas_id', 'id');
     }
 
     // relasi dengan mahasiswa_matakuliah
@@ -30,6 +33,7 @@ class Mahasiswa extends Model
         return $this->hasMany(Mahasiswa_MataKuliah::class);
     }
 
+    // Relasi many-to-many dengan model MataKuliah
     public function matakuliah()
     {
         return $this->belongsToMany(MataKuliah::class, 'mahasiswa_matakuliah', 'mahasiswa_id', 'matakuliah_id')

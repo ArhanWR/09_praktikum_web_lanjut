@@ -28,12 +28,8 @@ class CreateMahasiswaMatakuliahTable extends Migration
      */
     public function down(): void
     {
-        Schema::table('mahasiswas', function(Blueprint $table) {
-            $table->id('Nim');
+        Schema::table('mahasiswa_matakuliah', function (Blueprint $table) {
             $table->dropForeign(['mahasiswa_id']);
-        });
-        Schema::table('matakuliah', function(Blueprint $table) {
-            $table->id();
             $table->dropForeign(['matakuliah_id']);
         });
         Schema::dropIfExists('mahasiswa_matakuliah');

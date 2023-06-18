@@ -18,4 +18,10 @@ class Mahasiswa_MataKuliah extends Model
     {
         return $this->belongsTo(MataKuliah::class, 'matakuliah_id');
     }
+
+    // Relasi dengan model Mahasiswa
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id');
+    }
 }

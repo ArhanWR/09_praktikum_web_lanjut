@@ -19,6 +19,11 @@ class MahasiswaMataKuliahSeeder extends Seeder
                 'mahasiswa_id' => 123,
                 'matakuliah_id' => 2,
                 'nilai' => 95
+            ],
+            [
+                'mahasiswa_id' => 123,
+                'matakuliah_id' => 1,
+                'nilai' => 86
             ]
         ];
 

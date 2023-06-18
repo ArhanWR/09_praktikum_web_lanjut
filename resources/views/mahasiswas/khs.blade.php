@@ -39,14 +39,14 @@
                             <th>Semester</th>
                             <th>Nilai</th>
                         </tr>
-                        @foreach ($Mahasiswa->matakuliah as $mahasiswas)
-                        <tr>
-                            <td>{{ $mahasiswas->nama_matkul }}</td>
-                            <td>{{ $mahasiswas->sks }}</td>
-                            <td>{{ $mahasiswas->semester }}</td>
-                            <td>{{ $mahasiswas->pivot->nilai }}</td>
-                        </tr>
-                        @endforeach 
+                        @foreach ($mahasiswaMataKuliah as $mahasiswaMk)
+                            <tr>
+                                <td>{{ $mahasiswaMk->mataKuliah->nama_matkul }}</td>
+                                <td>{{ $mahasiswaMk->mataKuliah->sks }}</td>
+                                <td>{{ $mahasiswaMk->mataKuliah->semester }}</td>
+                                <td>{{ $mahasiswaMk->nilai }}</td>
+                            </tr>
+                        @endforeach
                     </table>
                     <a href="{{ route('mahasiswas.index') }}" class="btn btn-success mt-3">Kembali</a>
                 </div>
