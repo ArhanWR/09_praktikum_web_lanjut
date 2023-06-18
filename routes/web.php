@@ -21,16 +21,18 @@ Route::get('/', function () {
 
 Route::resource('mahasiswa', MahasiswaController::class);
 
-Route::get('/mahasiswas', [MahasiswaController::class, 'index'])->name('mahasiswas.index');
+Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswas.index');
 
-Route::get('/mahasiswas/create', [MahasiswaController::class, 'create'])->name('mahasiswas.create');
+Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswas.create');
 
-Route::get('/mahasiswas/edit/{Nim}', [MahasiswaController::class, 'edit'])->name('mahasiswas.edit');
+Route::get('/mahasiswa/edit/{Nim}', [MahasiswaController::class, 'edit'])->name('mahasiswas.edit');
 
-Route::put('/mahasiswas/{Nim}', [MahasiswaController::class, 'update'])->name('mahasiswas.update');
+Route::put('/mahasiswa/{Nim}', [MahasiswaController::class, 'update'])->name('mahasiswas.update');
 
-Route::post('/mahasiswas/store', [MahasiswaController::class, 'store'])->name('mahasiswas.store');
+Route::post('/mahasiswa/store', [MahasiswaController::class, 'store'])->name('mahasiswas.store');
 
-Route::delete('/mahasiswas/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('mahasiswas.destroy');
+Route::delete('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('mahasiswas.destroy');
 
-Route::get('/mahasiswas/{mahasiswa}', [MahasiswaController::class, 'show'])->name('mahasiswas.show');
+Route::get('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'show'])->name('mahasiswas.show');
+
+Route::get('/mahasiswa/{Nim}/khs',[MahasiswaController::class, 'showKhs'])->name('mahasiswas.showKhs');
